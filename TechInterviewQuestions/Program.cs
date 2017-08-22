@@ -10,10 +10,13 @@ namespace TechInterviewQuestions
     {
         static void Main(string[] args)
         {
+            //Ask user for an integer. If it's divisible by 3, write FIZZ. If it's divisible by 5, write BUZZ
+            //If it's divisible by both 3 and 5, write FIZZBUZZ
+
             Console.WriteLine("Please enter an integer:");
             int integer = int.Parse(Console.ReadLine());
 
-            if(integer % 15 == 0)
+            if(integer % 15 == 0) //15 takes care of both 3 and 5 but can write each mod separately with &&
             {
                 Console.WriteLine("FIZZBUZZ");
             }
