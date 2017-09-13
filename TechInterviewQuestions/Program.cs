@@ -56,23 +56,55 @@ namespace TechInterviewQuestions
                 Console.WriteLine(num);
             }
 
-            bool isPrime = true;
-            for (int i = 2; i <= 100; i++)
+            //bool isPrime = true;
+            //for (int i = 2; i <= 100; i++)
+            //{
+            //    for (int j = 2; j <= 100; j++)
+            //    {
+            //        if (i != j && i % j == 0)
+            //        {
+            //            isPrime = false;
+            //            break;
+            //        }
+            //    }
+            //}
+            //if(isPrime)
+            //{
+            //    Console.WriteLine(i +" ");
+            //}
+            //isPrime = true;
+
+
+            //create a method that takes one int Array
+            //the method should return the largest # in that array
+            int[] randomNums = { 6, 4, 8, 2 };
+            Console.WriteLine(FindLargest(randomNums));
+
+        }
+        //create a method that takes one int Array
+        //the method should return the largest # in that array
+        public static int FindLargest(int[] arrayOfNums)
+        {
+            int largestNum = arrayOfNums[0];
+            foreach (int num in arrayOfNums)
             {
-                for (int j = 2; j <= 100; j++)
+                if (largestNum < num)
                 {
-                    if (i != j && i % j == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
+                    largestNum = num;
                 }
             }
-            if(isPrime)
+            return largestNum;
+        }
+
+        //create a method that takes a string parameter then returns that string reversed
+        public static string ReverseString(string stringOfWords)
+        {
+            string reversedWord = "";
+            for (int i = stringOfWords.Length-1; i >0; i--)
             {
-                Console.WriteLine(i +" ");
+                reversedWord+=reversedWord[i] //concatenating onto our string in backwards order
             }
-            isPrime = true;
+            return reversedWord;
         }
     }
 }
